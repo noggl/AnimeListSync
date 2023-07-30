@@ -1,0 +1,3 @@
+malupdate
+requests
+python-dotenv
