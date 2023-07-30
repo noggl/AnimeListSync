@@ -12,13 +12,14 @@ def getVariables():
     aniListUser = os.getenv("aniListUser")
     aniListAPI_ID = os.getenv("aniListAPI_ID")
     aniListAPI_secret = os.getenv("aniListAPI_secret")
+    aniList_token=os.getenv("aniList_token")
     malUser = os.getenv("malUser")
     malPassword = os.getenv("malPassword")
-    return aniListUser,aniListAPI_ID,aniListAPI_secret,malUser,malPassword
+    return aniListUser,aniListAPI_ID,aniListAPI_secret,aniList_token,malUser,malPassword
 
 if __name__ == "__main__":
     # Get variables
-    aniListUser,aniListAPI_ID,aniListAPI_secret,malUser,malPassword=getVariables()
+    aniListUser,aniListAPI_ID,aniListAPI_secret,aniList_token,malUser,malPassword=getVariables()
     # If any of the variables are null, print error and exit
     if not aniListUser or not aniListAPI_ID or not aniListAPI_secret or not malUser or not malPassword:
         print("Error: Variables not set")
@@ -28,6 +29,8 @@ if __name__ == "__main__":
         with open("token.txt", "r") as text_file:
             token=text_file.read()
     # If token.txt does not exist, get token from AniList
+    elif aniList_token:
+        token=aniList_token
     else:
         token=getAniListToken(aniListAPI_ID,aniListAPI_secret,"null")
         # write token to file

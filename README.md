@@ -5,8 +5,8 @@
 1. [Download](https://github.com/noggl/AnimeListSync/archive/refs/heads/main.zip) or `git clone` this repository
 2. Run `pip install -r requirements.txt` to install dependencies
 3. Populate .env file with your credentials
-4. Run `python sync.py` to start the program
-5. When prompted to go to a link, go to the link and authorize the app with AniList.co
+4. Run `python code/sync.py` to start the program
+5. When prompted to go to a link, go to the link and copy the part of the url after `?code=`
 
 ## .env file
 

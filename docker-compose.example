@@ -1,0 +1,15 @@
+version: '3.8'
+services:
+  AnimeListSync:
+    container_name: animelistsync
+    image: ghcr.io/noggl/animelistsync:main
+    restart: unless-stopped
+    environment:
+      - aniListUser="noggl"
+      - aniListAPI_ID="12345"
+      - aniListAPI_secret="some_secret"
+      - aniList_token="token"
+      - malUser="noggl"
+      - malPassword="mal_password"
+    volumes:
+      - '/etc/localtime:/etc/localtime:ro'
