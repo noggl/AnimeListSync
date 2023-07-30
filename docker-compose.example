@@ -11,5 +11,6 @@ services:
       - aniList_token="token"
       - malUser="noggl"
       - malPassword="mal_password"
+      - INTERVAL=3600                       # Interval in seconds to run the script on (this will run it every hour)
     volumes:
       - '/etc/localtime:/etc/localtime:ro'
