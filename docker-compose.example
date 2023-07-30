@@ -5,12 +5,13 @@ services:
     image: ghcr.io/noggl/animelistsync:main
     restart: unless-stopped
     environment:
-      - aniListUser="noggl"
-      - aniListAPI_ID="12345"
-      - aniListAPI_secret="some_secret"
-      - aniList_token="token"
-      - malUser="noggl"
-      - malPassword="mal_password"
+      # DO NOT QUOTE THE ENVIRONMENT VARIABLES
+      - aniListUser=noggl
+      - aniListAPI_ID=12345
+      - aniListAPI_secret=some_secret
+      - aniList_token=token
+      - malUser=noggl
+      - malPassword=mal_password
       - INTERVAL=3600                       # Interval in seconds to run the script on (this will run it every hour)
     volumes:
       - '/etc/localtime:/etc/localtime:ro'
