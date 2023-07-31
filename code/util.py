@@ -128,8 +128,8 @@ def compare(list1,list2):
         for item2 in list2:
             if item1["AniListID"]==item2["AniListID"] or item1["MALID"]==item2["MALID"]:
                 if item1["progress"]!=item2["progress"] or int(item1["score"])!=int(item2["score"]) or item1["list"]!=item2["list"]:
-                    # if lists are both completed and progress is within 2 episodes, ignore
-                    if not(item1["list"]=="completed" and item2["list"]=="completed" and abs(item1["progress"]-item2["progress"])<=2):
+                    # if lists are both completed, score is the same, and progress is within 2 episodes, ignore
+                    if not(item1["list"]=="completed" and item2["list"]=="completed" and abs(item1["progress"]-item2["progress"])<=2 and int(item1["score"])==int(item2["score"])):
                         #use the list that has the most recent update
                         if item1["updatedAt"]>item2["updatedAt"]:
                             list2Changes.append(item1)
